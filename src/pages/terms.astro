@@ -243,8 +243,19 @@ import Layout from '../layouts/Layout.astro';
       /* Mobile Responsive */
 	@media (max-width: 768px) {
 		.mobile-menu-toggle {
-			display: flex;
+			display: none;
 		}
+
+        .nav-links.active {
+        display: flex; /* or block, depending on layout */
+        flex-direction: column; /* if you want stacked links */
+        position: absolute; /* optional for overlay menu */
+        top: 60px; /* adjust to below header */
+        left: 0;
+        width: 100%;
+        background-color: white; /* or your menu bg */
+        z-index: 999;
+    }
 
 		.stress-free-text {
 			font-size: 1.4rem;
@@ -611,6 +622,7 @@ import Layout from '../layouts/Layout.astro';
 		}
 	}
     </style>
+
   </head>
   <Layout title="利用規約">
   <body>
@@ -619,9 +631,11 @@ import Layout from '../layouts/Layout.astro';
       <div class="container">
         <nav class="header-nav">
           <div class="logo-container">
-            <h1 class="logo">
-              <span class="logo-raku">Raku</span><span class="logo-job">Job</span>
-            </h1>
+            <a href="/" class="logo" style="text-decoration: none; color: inherit;">
+                <h1>
+                  <span class="logo-raku">Raku</span><span class="logo-job">Job</span>
+                </h1>
+              </a>              
             <p class="logo-subtitle">ストレスフリーな職場探し</p>
           </div>
           <div class="nav-links">

@@ -39,9 +39,11 @@ import Layout from '../layouts/Layout.astro';
 		<div class="container">
 			<nav class="header-nav">
 				<div class="logo-container">
-					<h1 class="logo">
-						<span class="logo-raku">Raku</span><span class="logo-job">Job</span>
-					</h1>
+					<a href="/" class="logo" style="text-decoration: none; color: inherit;">
+						<h1>
+						  <span class="logo-raku">Raku</span><span class="logo-job">Job</span>
+						</h1>
+					  </a> 
 					<p class="logo-subtitle">ストレスフリーな職場探し</p>
 				</div>
 				<div class="nav-links">
@@ -569,7 +571,11 @@ import Layout from '../layouts/Layout.astro';
 			<div class="footer-content">
 				<div class="footer-brand">
 					<h3 class="footer-logo">
-						<span class="logo-raku">Raku</span><span class="logo-job">Job</span>
+						<a href="/" class="logo" style="text-decoration: none; color: inherit;">
+							<h1>
+							  <span class="logo-raku">Raku</span><span class="logo-job">Job</span>
+							</h1>
+						  </a> 
 					</h3>
 					<p class="footer-description">ストレスフリーな職場探しをサポート</p>
 				</div>
@@ -683,7 +689,7 @@ import Layout from '../layouts/Layout.astro';
 	}
 
 	.logo {
-		font-size: 2rem;
+		font-size: 1rem;
 		font-weight: 800;
 		margin: 0;
 	}
