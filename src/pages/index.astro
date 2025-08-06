@@ -645,6 +645,16 @@ import Layout from '../layouts/Layout.astro';
 		animation-delay: 15s;
 	}
 
+	/*Global CSS*/
+	html, body {
+    overflow-x: hidden;
+	}
+	img, video {
+		max-width: 100%;
+		height: auto;
+	}
+
+
 	/* Header Styles */
 	.main-header {
 		position: fixed;
@@ -2429,6 +2439,18 @@ import Layout from '../layouts/Layout.astro';
 		.mobile-menu-toggle {
 			display: flex;
 		}
+		.nav-links.active {
+        display: flex; /* or block, depending on layout */
+        flex-direction: column; /* if you want stacked links */
+        position: absolute; /* optional for overlay menu */
+        top: 60px; /* adjust to below header */
+        left: 0;
+        width: 100%;
+        background-color: white; /* or your menu bg */
+        z-index: 999;
+		padding: 2rem;
+        border-radius: 20px;
+    }
 
 		.stress-free-text {
 			font-size: 1.4rem;
@@ -2989,6 +3011,14 @@ import Layout from '../layouts/Layout.astro';
 	mobileMenuToggle?.addEventListener('click', () => {
 		navLinks.classList.toggle('active');
 		mobileMenuToggle.classList.toggle('active');
+	});
+
+	// Close mobile menu after clicking a link
+	document.querySelectorAll('.nav-links a').forEach(link => {
+		link.addEventListener('click', () => {
+			navLinks.classList.remove('active');
+			mobileMenuToggle.classList.remove('active');
+		});
 	});
 
 	// Scroll indicator functionality
